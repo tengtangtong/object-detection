@@ -2,6 +2,14 @@ README.txt
 
 This project tackles 15-class scene recognition on a dataset of 1,500 images using a progressive CNN-based approach. Starting from a custom CNN baseline (74.44% val accuracy), we systematically improved performance by exploring ResNet architectures from scratch (78.67%), then applying transfer learning with pretrained ResNet152 (95.33%) and ConvNeXt Small (97.67%). Ablation studies were conducted across model depth, unfreezing strategy, learning rate, data augmentation, and label smoothing. A per-class analysis revealed complementary strengths between the two architectures — ConvNeXt excelling at texture-rich indoor scenes, ResNet152 stronger on structured outdoor scenes — motivating a soft-voting ensemble that achieves a final validation accuracy of 98.67% and macro-average F1 of 0.9867.
 
+Dataset:
+This project uses the **Scene-15 Dataset** (Lazebnik et al., 2006), consisting of
+1,500 images across 15 scene categories (100 images per class).
+
+The dataset was provided as part of the NUS DSA5203 course assignment and is
+not redistributed in this repository. The original dataset can be found at:
+https://www.di.ens.fr/willow/research/tscan/downloads.html
+
 Requirements:
     pip install torch torchvision scikit-learn pillow numpy
 
